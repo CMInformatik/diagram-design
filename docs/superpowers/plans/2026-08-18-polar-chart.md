@@ -272,9 +272,9 @@ Use `<circle>` grid rings at `r=32/64/96/128/160`, eight faint full-radius spoke
 ```html
 <g data-polar-category="00–03" data-polar-index="0" data-polar-value="32">
   <line data-polar-ray x1="500" y1="230" x2="500" y2="178.8"
-        stroke="#4f5d75" stroke-width="2"/>
+        stroke="#4a6272" stroke-width="2"/>
   <circle data-polar-marker cx="500" cy="178.8" r="4"
-          fill="#f5f5f5" stroke="#4f5d75" stroke-width="1.2"/>
+          fill="#f7f9fa" stroke="#4a6272" stroke-width="1.2"/>
   <text data-polar-value-label x="500" y="26" ...>32</text>
 </g>
 ```

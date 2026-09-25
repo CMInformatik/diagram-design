@@ -17,18 +17,18 @@ Every cell is two overlapping `<rect>` elements: a paper-fill underlay (no data 
 
 ```svg
 <!-- Paper underlay — no data attributes, scenery only -->
-<rect x="160" y="64" width="116" height="56" fill="#f5f5f5"/>
+<rect x="160" y="64" width="116" height="56" fill="#f7f9fa"/>
 
 <!-- Data cell — all three bindings required -->
 <rect data-row="auth" data-col="S1" data-value="4"
       x="160" y="64" width="116" height="56"
-      fill="rgba(45,49,66,0.29)"/>
+      fill="rgba(29,56,73,0.29)"/>
 
 <!-- Focal cell — data-focal="true" required, uses accent fill -->
-<rect x="520" y="124" width="116" height="56" fill="#f5f5f5"/>
+<rect x="520" y="124" width="116" height="56" fill="#f7f9fa"/>
 <rect data-row="payments" data-col="S4" data-value="47" data-focal="true"
       x="520" y="124" width="116" height="56"
-      fill="rgba(235,108,54,0.85)" stroke="#eb6c36" stroke-width="1.2"/>
+      fill="rgba(0,159,227,0.85)" stroke="#009fe3" stroke-width="1.2"/>
 ```
 
 ## The fill ramp

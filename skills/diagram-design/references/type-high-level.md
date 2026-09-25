@@ -109,7 +109,7 @@ chevron_cx(C)      = (x_boundaries[index(C)] + x_boundaries[index(C)+1]) / 2
 - Middle: `(x0,4) (x1-12,4) (x1,18) (x1-12,32) (x0,32) (x0+12,18)`
 - Last (rightmost): `(x0,4) (effective_w,4) (effective_w,32) (x0,32) (x0+12,18)`
 
-Fills alternate `#2d3142` / `#3d4460` (light mode) or `#3d4460` / `#4a5270` (dark mode). Labels: paper-colored mono `font-size=7`, `letter-spacing=0.14em`, `text-anchor=middle`, centered at `chevron_cx, 21`.
+Fills alternate `#1d3849` / `#3d4460` (light mode) or `#3d4460` / `#4a5270` (dark mode). Labels: paper-colored mono `font-size=7`, `letter-spacing=0.14em`, `text-anchor=middle`, centered at `chevron_cx, 21`.
 
 **Color override** (per chevron, both horizontal and vertical): a chevron may declare an optional `color: "#hex"` that replaces the alternation fill for that one chevron. Use it to flag a phase that pairs with a custom-colored component (e.g., `Security` chevron in red when the Identity bar uses `color: "#b85450"`). Rules:
 
@@ -127,7 +127,7 @@ sources_w          = x_boundaries[1] - 8           # width of the first chevron,
 sources_h          = 336
 ```
 
-Stroke: `rgba(45,49,66,0.20)`, `stroke-width=0.8`, `stroke-dasharray=6,3`, `rx=6`. Zone fill: `rgba(45,49,66,0.02)`.
+Stroke: `rgba(29,56,73,0.20)`, `stroke-width=0.8`, `stroke-dasharray=6,3`, `rx=6`. Zone fill: `rgba(29,56,73,0.02)`.
 
 ### 2.4 Cluster boundary (solid)
 
@@ -138,7 +138,7 @@ cluster_w          = effective_w - cluster_x       # extends to right strip / ca
 cluster_h          = 336
 ```
 
-Stroke: `rgba(45,49,66,0.18)`, `stroke-width=1.2`, `rx=8`. Fill: `rgba(45,49,66,0.02)`. K8s icon + label at `(cluster_x + 16, 352)` (icon) and `(cluster_x + 40, 362)` (text).
+Stroke: `rgba(29,56,73,0.18)`, `stroke-width=1.2`, `rx=8`. Fill: `rgba(29,56,73,0.02)`. K8s icon + label at `(cluster_x + 16, 352)` (icon) and `(cluster_x + 40, 362)` (text).
 
 ### 2.5 Cross-cutting bars (identity, observability, …)
 
@@ -152,7 +152,7 @@ cross_w            = effective_w - 4               # spans body width, stops at 
 cross_h            = 40
 ```
 
-Stroke: `rgba(45,49,66,0.20)`, `stroke-width=0.8`, `rx=6`. Fill: `rgba(45,49,66,0.05)`. Icon at `(16, cross_y(k) + 10)`, name centered at `(effective_w / 2, cross_y(k) + 22)`, subtitle at `(effective_w / 2, cross_y(k) + 34)`.
+Stroke: `rgba(29,56,73,0.20)`, `stroke-width=0.8`, `rx=6`. Fill: `rgba(29,56,73,0.05)`. Icon at `(16, cross_y(k) + 10)`, name centered at `(effective_w / 2, cross_y(k) + 22)`, subtitle at `(effective_w / 2, cross_y(k) + 34)`.
 
 Reserved cross-cutting *concerns* (informational; user can name the actual bar whatever they want):
 - **Identity / Security** — Keycloak, LDAP/AD, Okta, Auth0, OIDC providers
@@ -172,7 +172,7 @@ bar_w              = cluster_w - 24
 bar_h              = 44
 ```
 
-Stroke: `rgba(45,49,66,0.18)`, `stroke-width=0.8`, `rx=4`. Fill: `rgba(45,49,66,0.05)`. Tool icon at the far right (`bar_x + bar_w - 50, 58`); name centered at `(bar_x + bar_w/2, 71)`; subtitle at `(bar_x + bar_w/2, 84)`.
+Stroke: `rgba(29,56,73,0.18)`, `stroke-width=0.8`, `rx=4`. Fill: `rgba(29,56,73,0.05)`. Tool icon at the far right (`bar_x + bar_w - 50, 58`); name centered at `(bar_x + bar_w/2, 71)`; subtitle at `(bar_x + bar_w/2, 84)`.
 
 ### 2.7 Component nodes (inside cluster)
 
@@ -191,7 +191,7 @@ gap                = 16
 row_top(k)         = first_top_y + k * (node_h + gap)   # k = 0..K-1
 ```
 
-**Focal node:** `fill="rgba(235,108,54,0.08)"`, `stroke="#eb6c36"`, `stroke-width=1.2`. Title text in accent color. All other nodes: white fill, `stroke=rgba(45,49,66,0.25)`, `stroke-width=1`.
+**Focal node:** `fill="rgba(0,159,227,0.08)"`, `stroke="#009fe3"`, `stroke-width=1.2`. Title text in accent color. All other nodes: white fill, `stroke=rgba(29,56,73,0.25)`, `stroke-width=1`.
 
 Role badge top-left at `(node_x+8, node_y+6)`, size 12 high. Icon top-right at `(node_x+node_w-32, node_y+6)`, 24×24, monochrome via `currentColor`. Name centered at `(node_cx, node_y+44)` size 11 sans semibold. Subtitle at `(node_cx, node_y+56)` size 8 mono muted.
 
@@ -232,7 +232,7 @@ Adjacent edges share the same y (no gap), like horizontal chevrons share x at th
 - Middle: notch on top, point on bottom — `(strip_x, y0) (strip_x+strip_w/2, y0+12) (strip_x+strip_w, y0) (strip_x+strip_w, y1-12) (strip_x+strip_w/2, y1) (strip_x, y1-12)`
 - Last (bottommost): notch on top, flat bottom — `(strip_x, y0) (strip_x+strip_w/2, y0+12) (strip_x+strip_w, y0) (strip_x+strip_w, y1) (strip_x, y1)`
 
-Fills alternate `#2d3142` / `#3d4460` (same palette as horizontals). Labels: paper-colored mono `font-size=7`, `letter-spacing=0.14em`, **rotated −90°**, anchored at `(strip_x + strip_w/2, (y0+y1)/2)`.
+Fills alternate `#1d3849` / `#3d4460` (same palette as horizontals). Labels: paper-colored mono `font-size=7`, `letter-spacing=0.14em`, **rotated −90°**, anchored at `(strip_x + strip_w/2, (y0+y1)/2)`.
 
 Vertical chevrons honor the per-chevron `color` override documented in §2.2 — apply the hex to the polygon fill, leave the rotated label paper-colored. Pair the override with the same hex on the chevron's paired bar/crosscut to bind them visually as one concern.
 
@@ -244,19 +244,19 @@ These are non-negotiable. Pick the style **automatically** from the topology —
 
 | `style` | Stroke | Width | Dash | Marker | When required |
 |---|---|---|---|---|---|
-| `primary` | `#eb6c36` | 1.2 | — | `arrow-accent` | Every edge whose endpoint is the `focal` node. |
-| `secondary` | `#4f5d75` | 1.0 | — | `arrow` | Default for source→component and component→component when neither endpoint is focal. |
-| `trigger` | `#4f5d75` | 1.0 | `4,3` | `arrow-sm` | Every edge originating from a `kind: bar` component. |
-| `query` | `rgba(45,49,66,0.30)` | 1.0 | `4,3` | `arrow` | Read-back edges (e.g., focal ↔ Trino). |
+| `primary` | `#009fe3` | 1.2 | — | `arrow-accent` | Every edge whose endpoint is the `focal` node. |
+| `secondary` | `#4a6272` | 1.0 | — | `arrow` | Default for source→component and component→component when neither endpoint is focal. |
+| `trigger` | `#4a6272` | 1.0 | `4,3` | `arrow-sm` | Every edge originating from a `kind: bar` component. |
+| `query` | `rgba(29,56,73,0.30)` | 1.0 | `4,3` | `arrow` | Read-back edges (e.g., focal ↔ Trino). |
 
 **Defs block** (required, exactly these four markers):
 
 ```svg
 <defs>
-  <marker id="arrow"        markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
-  <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#eb6c36"/></marker>
-  <marker id="arrow-sm"     markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto"><polygon points="0 0, 6 2.5, 0 5" fill="#4f5d75"/></marker>
-  <marker id="arrow-dim"    markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(45,49,66,0.45)"/></marker>
+  <marker id="arrow"        markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6272"/></marker>
+  <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#009fe3"/></marker>
+  <marker id="arrow-sm"     markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto"><polygon points="0 0, 6 2.5, 0 5" fill="#4a6272"/></marker>
+  <marker id="arrow-dim"    markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(29,56,73,0.45)"/></marker>
 </defs>
 ```
 
@@ -397,20 +397,20 @@ When `dark: true`, swap these tokens:
 
 | Token | Light | Dark |
 |---|---|---|
-| Page paper | `#f5f5f5` | `#1c1f2e` |
-| Ink | `#2d3142` | `#f5f5f5` |
-| Muted text | `#4f5d75` | `rgba(245,245,245,0.65)` |
-| Chevron dark fill | `#2d3142` | `#3d4460` |
+| Page paper | `#f7f9fa` | `#1c1f2e` |
+| Ink | `#1d3849` | `#f7f9fa` |
+| Muted text | `#4a6272` | `rgba(247,249,250,0.65)` |
+| Chevron dark fill | `#1d3849` | `#3d4460` |
 | Chevron light fill | `#3d4460` | `#4a5270` |
-| Chevron label | `#f5f5f5` | `#f5f5f5` (unchanged) |
-| Dashed border | `rgba(45,49,66,0.20)` | `rgba(245,245,245,0.22)` |
-| Cluster border | `rgba(45,49,66,0.18)` | `rgba(245,245,245,0.18)` |
-| Node fill | white | `rgba(245,245,245,0.06)` |
-| Node stroke | `rgba(45,49,66,0.25)` | `rgba(245,245,245,0.20)` |
-| Focal fill | `rgba(235,108,54,0.08)` | `rgba(240,138,89,0.12)` |
-| Focal stroke | `#eb6c36` | `#f08a59` |
-| Accent connector | `#eb6c36` | `#f08a59` |
-| Dot pattern | `rgba(45,49,66,0.10)` | `rgba(245,245,245,0.10)` |
+| Chevron label | `#f7f9fa` | `#f7f9fa` (unchanged) |
+| Dashed border | `rgba(29,56,73,0.20)` | `rgba(247,249,250,0.22)` |
+| Cluster border | `rgba(29,56,73,0.18)` | `rgba(247,249,250,0.18)` |
+| Node fill | white | `rgba(247,249,250,0.06)` |
+| Node stroke | `rgba(29,56,73,0.25)` | `rgba(247,249,250,0.20)` |
+| Focal fill | `rgba(0,159,227,0.08)` | `rgba(51,181,236,0.12)` |
+| Focal stroke | `#009fe3` | `#33b5ec` |
+| Accent connector | `#009fe3` | `#33b5ec` |
+| Dot pattern | `rgba(29,56,73,0.10)` | `rgba(247,249,250,0.10)` |
 
 ---
 

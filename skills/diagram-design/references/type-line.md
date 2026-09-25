@@ -19,9 +19,9 @@
 ```svg
 <!-- Focal series -->
 <polyline points="x0,y0 x1,y1 x2,y2 ..."
-          fill="none" stroke="#eb6c36" stroke-width="1.8" stroke-linejoin="round"/>
+          fill="none" stroke="#009fe3" stroke-width="1.8" stroke-linejoin="round"/>
 <!-- Dots at each point (focal only) -->
-<circle cx="x0" cy="y0" r="4" fill="#eb6c36"/>
+<circle cx="x0" cy="y0" r="4" fill="#009fe3"/>
 
 <!-- Non-focal series -->
 <polyline points="x0,y0 x1,y1 ..."
@@ -93,22 +93,22 @@ Not for: three or more states (that is the **line chart** above, or a bump chart
 
 ```svg
 <!-- State captions: data-axis names the axis, data-state binds the text -->
-<text data-axis="from" data-state="BEFORE" x="320" y="440" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">BEFORE</text>
-<text data-axis="to" data-state="AFTER" x="680" y="440" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">AFTER</text>
+<text data-axis="from" data-state="BEFORE" x="320" y="440" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">BEFORE</text>
+<text data-axis="to" data-state="AFTER" x="680" y="440" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">AFTER</text>
 
 <!-- A series: the line declares its two values, and each of its four labels
      declares which series and which end it belongs to -->
 <line data-series="Recommender" data-from="238" data-to="431"
-      x1="320" y1="303.5" x2="680" y2="140.5" stroke="#eb6c36" stroke-width="2.4"/>
-<circle cx="320" cy="303.5" r="4" fill="#eb6c36"/>
-<circle cx="680" cy="140.5" r="4" fill="#eb6c36"/>
-<text data-series="Recommender" data-end="from" data-role="name" x="272" y="307" fill="#2d3142" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif" text-anchor="end">Recommender</text>
-<text data-series="Recommender" data-end="from" x="304" y="307" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace" text-anchor="end">238</text>
-<text data-series="Recommender" data-end="to" x="696" y="144" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace">431</text>
-<text data-series="Recommender" data-end="to" data-role="name" x="728" y="144" fill="#2d3142" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif">Recommender</text>
+      x1="320" y1="303.5" x2="680" y2="140.5" stroke="#009fe3" stroke-width="2.4"/>
+<circle cx="320" cy="303.5" r="4" fill="#009fe3"/>
+<circle cx="680" cy="140.5" r="4" fill="#009fe3"/>
+<text data-series="Recommender" data-end="from" data-role="name" x="272" y="307" fill="#1d3849" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif" text-anchor="end">Recommender</text>
+<text data-series="Recommender" data-end="from" x="304" y="307" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace" text-anchor="end">238</text>
+<text data-series="Recommender" data-end="to" x="696" y="144" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace">431</text>
+<text data-series="Recommender" data-end="to" data-role="name" x="728" y="144" fill="#1d3849" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif">Recommender</text>
 ```
 
-Non-focal series: `stroke="rgba(45,49,66,0.68)"` at `stroke-width="1.2"`, dots `r=3`, names at `font-weight="500"`.
+Non-focal series: `stroke="rgba(29,56,73,0.68)"` at `stroke-width="1.2"`, dots `r=3`, names at `font-weight="500"`.
 
 What each binding buys, and what it costs to omit:
 
@@ -181,11 +181,11 @@ The slopegraph's colour section holds here unchanged, with one addition for the 
 The binding contract is the slopegraph's, applied to areas: the outline declares its bins and its baseline, and every visible string is bound to what it describes.
 
 ```svg
-<line data-ridge="checkout-api" data-role="baseline" x1="320" y1="320" x2="680" y2="320" stroke="rgba(45,49,66,0.25)" stroke-width="1"/>
-<path data-ridge="checkout-api" data-baseline="320" data-bins="0,1,6,17,21,14,8,6,7,9,7,4,0" d="M320,320 L350,317.6 L380,305.6 L410,279.2 L440,269.6 L470,286.4 L500,300.8 L530,305.6 L560,303.2 L590,298.4 L620,303.2 L650,310.4 L680,320 Z" fill="rgba(235,108,54,0.16)" stroke="#eb6c36" stroke-width="2.4" stroke-linejoin="round"/>
-<text data-ridge="checkout-api" data-role="name" x="304" y="323.5" fill="#2d3142" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif" text-anchor="end">checkout-api</text>
-<text data-ridge="checkout-api" data-role="range" x="696" y="323.5" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace">40–440 ms</text>
-<text data-tick="2" data-bin="240" x="500" y="400" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">240</text>
+<line data-ridge="checkout-api" data-role="baseline" x1="320" y1="320" x2="680" y2="320" stroke="rgba(29,56,73,0.25)" stroke-width="1"/>
+<path data-ridge="checkout-api" data-baseline="320" data-bins="0,1,6,17,21,14,8,6,7,9,7,4,0" d="M320,320 L350,317.6 L380,305.6 L410,279.2 L440,269.6 L470,286.4 L500,300.8 L530,305.6 L560,303.2 L590,298.4 L620,303.2 L650,310.4 L680,320 Z" fill="rgba(0,159,227,0.16)" stroke="#009fe3" stroke-width="2.4" stroke-linejoin="round"/>
+<text data-ridge="checkout-api" data-role="name" x="304" y="323.5" fill="#1d3849" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif" text-anchor="end">checkout-api</text>
+<text data-ridge="checkout-api" data-role="range" x="696" y="323.5" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace">40–440 ms</text>
+<text data-tick="2" data-bin="240" x="500" y="400" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">240</text>
 ```
 
 `data-bins` is the basis of every geometric check, and it is this contract's own vocabulary: the slopegraph above binds `data-series` on a `<line>`, this variant binds `data-bins` on a `<path>`, and neither gate reads the other's attribute, so neither claims the other's file. Any further Line variant should take its own attribute for the same reason — a shared name means two checkers holding one figure to two contracts, and the one that loses rejects it for lacking elements it never said it had. `data-baseline` is what makes a moved row detectable; without it the checker would have to infer the zero from the drawing, which is the very thing being falsified. The printed range is cross-checked against the first and last nonzero bin through the figure's own tick scale, so a range widened by a word is a finding. `scripts/verify-ridgeline.py` covers the amplitude, the pitch, the baseline rules, the shared bins, the segment grammar, the overlap ceiling, the focus pairing and every label binding; `scripts/test-verify-ridgeline.py` proves each check in both polarities and pins the scope treaty with the sibling gates.
@@ -251,13 +251,13 @@ Not for: exact per-period values (the reader gets shape, not numbers — use a *
      Absolute M/C/L/Z only; on-curve vertices at every period column. -->
 <path data-layer="Docs" data-values="8,9,7,6,0,0,5,7,8,8,9,9"
       d="M 80 297.5 C … L 960 403.8 C … Z"
-      fill="rgba(45,49,66,0.30)" stroke="#f5f5f5" stroke-width="1"/>
+      fill="rgba(29,56,73,0.30)" stroke="#f7f9fa" stroke-width="1"/>
 
 <!-- Period captions: data-index places the column, data-period binds the text -->
-<text data-period="W05" data-index="4" x="400" y="440" fill="#4f5d75" font-size="8" font-family="'Roboto Mono', monospace" letter-spacing="0.08em" text-anchor="middle">W05</text>
+<text data-period="W05" data-index="4" x="400" y="440" fill="#4a6272" font-size="8" font-family="'Roboto Mono', monospace" letter-spacing="0.08em" text-anchor="middle">W05</text>
 
 <!-- Legend entries: data-total binds the printed per-layer total -->
-<text data-layer="Docs" data-total="76" x="808" y="496" fill="#4f5d75" font-size="8.5" font-family="'Arial', 'Arimo', sans-serif">Docs · 76 min · paused</text>
+<text data-layer="Docs" data-total="76" x="808" y="496" fill="#4a6272" font-size="8.5" font-family="'Arial', 'Arimo', sans-serif">Docs · 76 min · paused</text>
 ```
 
 What the checker holds against those bindings: every layer's on-curve vertices sit at the shared period columns; per-period thickness matches `data-values` on one shared scale; layers tile with no gap or overlap; the envelope stays centred on one midline; control points sit where Catmull-Rom at 1/6 chord puts them (so the curve between vertices is determined by the vertices, not free to editorialise); each legend entry names its own layer and no other, and its total matches both its printed text and the sum of the declared values; and each period caption sits on its own column reading exactly its `data-period`. Paths must use plain absolute `M`/`C`/`L`/`Z` — anything else is refused rather than half-parsed, and **no `transform`** may touch a layer path, a bound label, or an ancestor group, for the same reason as the slopegraph: the checker reads raw coordinates.
@@ -309,10 +309,10 @@ Everything the slopegraph's colour section says holds here unchanged: one accent
 The binding contract is the slopegraph's, one level up: the path declares its ranks, and every visible string is bound to what it describes.
 
 ```svg
-<path data-series="legacy-http" data-ranks="1,2,4,6" d="M320,88 L440,144 L560,256 L680,368" fill="none" stroke="#eb6c36" stroke-width="2.4"/>
-<text data-series="legacy-http" data-end="first" data-role="name" x="272" y="91.5" fill="#2d3142" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif" text-anchor="end">legacy-http</text>
-<text data-series="legacy-http" data-end="first" data-role="rank" x="304" y="91.5" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace" text-anchor="end">#1</text>
-<text data-axis="0" data-state="Q1" x="320" y="416" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">Q1</text>
+<path data-series="legacy-http" data-ranks="1,2,4,6" d="M320,88 L440,144 L560,256 L680,368" fill="none" stroke="#009fe3" stroke-width="2.4"/>
+<text data-series="legacy-http" data-end="first" data-role="name" x="272" y="91.5" fill="#1d3849" font-size="11" font-weight="600" font-family="'Arial', 'Arimo', sans-serif" text-anchor="end">legacy-http</text>
+<text data-series="legacy-http" data-end="first" data-role="rank" x="304" y="91.5" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace" text-anchor="end">#1</text>
+<text data-axis="0" data-state="Q1" x="320" y="416" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace" letter-spacing="0.14em" text-anchor="middle">Q1</text>
 ```
 
 `data-ranks` is the basis of every geometric check, so a series whose labels go missing stays in the verified set and the missing label is itself reported. `scripts/verify-bump.py` covers the grid, the permutations, the segments, the dots, the focus pairing, the label bindings, label placement on both axes and the captions; `scripts/test-verify-bump.py` proves each check in both polarities. The gutter x is read off the figure — every label sharing an end and a role must agree on one column — so a resized plot needs no constant changed here.

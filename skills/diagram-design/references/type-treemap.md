@@ -35,14 +35,14 @@ Without it, a verifier has to infer the intended share from the text inside the 
 
 ```svg
 <!-- Opaque paper mask prevents the dot pattern showing through the tint -->
-<rect x="X" y="Y" width="W" height="H" rx="2" fill="#f5f5f5"/>
+<rect x="X" y="Y" width="W" height="H" rx="2" fill="#f7f9fa"/>
 <!-- Cell body -->
-<rect x="X" y="Y" width="W" height="H" rx="2" data-share="18.29" fill="rgba(45,49,66,0.16)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<text x="X+16" y="Y+28" fill="#2d3142" font-size="13" font-weight="600" font-family="'Arial', 'Arimo', sans-serif">NAME</text>
-<text x="X+16" y="Y+46" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace">VALUE · SHARE</text>
+<rect x="X" y="Y" width="W" height="H" rx="2" data-share="18.29" fill="rgba(29,56,73,0.16)" stroke="rgba(29,56,73,0.30)" stroke-width="1"/>
+<text x="X+16" y="Y+28" fill="#1d3849" font-size="13" font-weight="600" font-family="'Arial', 'Arimo', sans-serif">NAME</text>
+<text x="X+16" y="Y+46" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace">VALUE · SHARE</text>
 ```
 
-Focal cell: replace the fill with `rgba(235,108,54,0.16)` and the stroke with `#eb6c36` at 1.5px.
+Focal cell: replace the fill with `rgba(0,159,227,0.16)` and the stroke with `#009fe3` at 1.5px.
 
 ## Honest-data rule
 
@@ -97,10 +97,10 @@ The treemap's colour section holds here with one change: the ramp runs **per ser
 Every segment is one `<rect>` (over its paper mask, as in the parent) carrying the category, the series and the amount. Every visible string is bound to what it describes.
 
 ```svg
-<rect x="580" y="106" width="216" height="314" rx="2" data-column="mobile" data-segment="macOS" data-amount="1980" fill="rgba(235,108,54,0.16)" stroke="#eb6c36" stroke-width="1.5"/>
-<text data-column="mobile" data-segment="macOS" data-role="label" x="596" y="152" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace">1,980 min · 83% of mobile</text>
-<text data-column="mobile" data-role="caption" x="688" y="438" fill="#4f5d75" font-size="9" font-family="'Roboto Mono', monospace" text-anchor="middle">mobile · 24%</text>
-<text data-segment="macOS" data-role="key" x="344" y="497" fill="#4f5d75" font-size="8.5" font-family="'Arial', 'Arimo', sans-serif">macOS</text>
+<rect x="580" y="106" width="216" height="314" rx="2" data-column="mobile" data-segment="macOS" data-amount="1980" fill="rgba(0,159,227,0.16)" stroke="#009fe3" stroke-width="1.5"/>
+<text data-column="mobile" data-segment="macOS" data-role="label" x="596" y="152" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace">1,980 min · 83% of mobile</text>
+<text data-column="mobile" data-role="caption" x="688" y="438" fill="#4a6272" font-size="9" font-family="'Roboto Mono', monospace" text-anchor="middle">mobile · 24%</text>
+<text data-segment="macOS" data-role="key" x="344" y="497" fill="#4a6272" font-size="8.5" font-family="'Arial', 'Arimo', sans-serif">macOS</text>
 ```
 
 `data-amount` is the basis of every geometric check, and `data-segment` on a `<rect>` is this contract's scope key: the parent binds `data-share` on a `<rect>` and reads only files named for it, slopegraph binds `data-series` on a `<line>`, bump `data-ranks` and ridgeline `data-bins` on a `<path>`, bubble `data-size` and beeswarm `data-value` on a `<circle>`. No two gates read one attribute, so no two gates claim one file. A label prints the segment's amount and its within-column share and nothing else numeric; a caption prints its column's name and share of the whole; a key names its series. `scripts/verify-marimekko.py` covers the shared plot, the constant gutter, the width, height and area shares, the tiling, the series order, the accent count, every binding and the marker fit; `scripts/test-verify-marimekko.py` proves each check in both polarities and pins the scope treaty with the parent and the sibling gates.

@@ -11,9 +11,10 @@ CMI-Marketplace `cmi-claude-infrastructure`.
   Hellblau `#DFF2FD`, Hellgrau `#EBEBED`, Petrol `#1A808C`. CMI-Cyan nie als Textfarbe (Kontrast 2.97:1).
 - **Schrift:** Arial mit Arimo als freiem Ersatz (gleiche Laufweite) für alle Texte, Roboto Mono
   für technische Werte. Keine Serifenschrift, Titel in Arial 700.
-- **Vorlagen und Beispiele:** Schriftnamen in `.html`/`.md` mit `scripts/cmi-apply-fonts.py`
-  ersetzt. Die Farben in den Beispielen bleiben Upstream; der Skill übernimmt sie beim Erzeugen
-  aus dem Style Guide.
+- **Vorlagen, Beispiele, Code-Snippets:** Schriften und Upstream-Farbtokens in `.html`/`.md`
+  mit `scripts/cmi-apply-skin.py` auf CMI umgestellt, Titel in Arial 700. Ausgenommen sind die
+  Stellen, die die Upstream-Standardwerte zur Erkennung brauchen (Gate-Zeile im `SKILL.md`,
+  `onboarding.md`, `profiles.md`). «Coral» bleibt als Name der Akzent-Rolle stehen.
 - **Onboarding-Gate** entfällt (Hinweis im `SKILL.md`, Abschnitt 0).
 
 Die Python-Prüfskripte unter `scripts/` bleiben unverändert. Die Upstream-Entwickler-Checks
@@ -26,8 +27,8 @@ für die Nutzung relevant ist nur `skills/diagram-design/scripts/self_check.py`.
 git remote add upstream https://github.com/cathrynlavery/diagram-design.git   # einmalig
 git fetch upstream && git merge upstream/main
 # Konflikte in style-guide.md: CMI-Version behalten, neue Abschnitte von Upstream übernehmen
-python scripts/cmi-apply-fonts.py
-for f in skills/diagram-design/assets/example-*.html; do python skills/diagram-design/scripts/self_check.py "$f" || echo "FAIL $f"; done
+python scripts/cmi-apply-skin.py
+for f in skills/diagram-design/assets/{example-,template}*.html; do python skills/diagram-design/scripts/self_check.py "$f" || echo "FAIL $f"; done
 ```
 
 Danach Version in `.claude-plugin/plugin.json` auf `<upstream>-cmi.1` setzen und im

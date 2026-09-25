@@ -9,7 +9,7 @@
   1. **Index tag** on the far left (`L3`, `07`, `APPLICATION`) — Roboto Mono 8–9px eyebrow.
   2. **Layer name** slightly right of center-left — Arial 14–16px 600.
   3. **Sublabel / note** on the far right — Roboto Mono 9–10px muted.
-- Border between layers: 1px hairline `rgba(45,49,66,0.12)`. Outer silhouette 1px ink or muted.
+- Border between layers: 1px hairline `rgba(29,56,73,0.12)`. Outer silhouette 1px ink or muted.
 - Fills: either alternating subtle shades (paper / paper-2) OR all paper with hairline dividers. Pick one and hold it.
 - Direction indicator on the LEFT margin (outside the stack): small up/down arrow + Roboto Mono label (`abstraction ↑`, `packets ↓`).
 - Coral on **one** focal layer (stroke + subtle tint fill) — the bottleneck, the pay-rent layer, the one under discussion.

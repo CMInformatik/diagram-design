@@ -28,7 +28,7 @@ Open [`references/style-guide.md`](references/style-guide.md) and check the defa
 
 Then branch per the matching section of [`references/onboarding.md`](references/onboarding.md); for **(f)** follow [`references/profiles.md`](references/profiles.md).
 
-**CMI fork:** the shipped `references/style-guide.md` is the CMI skin (CMI Brandbook colours, Arial/Arimo + Roboto Mono). Treat it as the chosen skin: skip the gate, do not offer to save it as a profile, and take every font family from the style guide, never from upstream names in older snippets.
+**CMI fork:** the shipped `references/style-guide.md` is the CMI skin (CMI Brandbook colours, Arial/Arimo + Roboto Mono). Treat it as the chosen skin: skip the gate, do not offer to save it as a profile, and take every font family from the style guide, never from upstream names in older snippets. «Coral» in these docs names the accent role, which is CMI-Cyan here.
 
 **Once the style guide has been customized** (or the user explicitly chose default), skip this gate on later runs. A leading profile header names the copied-in active profile. Without a header, any semantic-role value or typography family differing from shipped defaults means **custom-unsaved**: skip the gate and offer to save it as a profile. All-default tokens with no marker/header trigger the gate. After onboarding, offer to save as a named client profile per `references/profiles.md`.
 
@@ -199,7 +199,7 @@ Type-specific anti-patterns live in each type reference linked in the guide.
 ### Typography (summary — full spec in style-guide.md)
 
 - **Title** — Arial, 1.75rem, 700 — H1 only
-- **Node name** — Arial, 12px, 600 — human-readable labels
+- **Node name** — Arial, 12px, 700 — human-readable labels
 - **Sublabel** — Roboto Mono, 9px — ports, URLs, field types
 - **Eyebrow / tag** — Roboto Mono, 7–8px, uppercase, tracked — type tags, axis labels
 - **Arrow label** — Roboto Mono, 8px — annotation on arrows
@@ -230,7 +230,7 @@ Universal building blocks. Type-specialized primitives (lifeline, activation bar
 **Default: clean paper, no dot pattern.** Single `<rect>` filled with `paper`. Don't wrap the diagram in a secondary container background — the diagram sits directly on the page.
 
 ```svg
-<rect width="100%" height="100%" fill="#f5f5f5"/>
+<rect width="100%" height="100%" fill="#f7f9fa"/>
 ```
 
 **Optional: dotted paper variant.** When a long-form editorial diagram benefits from textured ground (essays, hero diagrams on a dedicated page), opt in by adding the `dots` pattern and a second rect:
@@ -238,10 +238,10 @@ Universal building blocks. Type-specialized primitives (lifeline, activation bar
 ```svg
 <defs>
   <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-    <circle cx="1" cy="1" r="0.9" fill="rgba(45,49,66,0.10)"/>
+    <circle cx="1" cy="1" r="0.9" fill="rgba(29,56,73,0.10)"/>
   </pattern>
 </defs>
-<rect width="100%" height="100%" fill="#f5f5f5"/>
+<rect width="100%" height="100%" fill="#f7f9fa"/>
 <rect width="100%" height="100%" fill="url(#dots)" opacity="0.6"/>
 ```
 
@@ -251,21 +251,21 @@ Don't use the dot pattern when the diagram sits inside a product page, slide, or
 
 ```svg
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-  <polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/>
+  <polygon points="0 0, 8 3, 0 6" fill="#4a6272"/>
 </marker>
 <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-  <polygon points="0 0, 8 3, 0 6" fill="#eb6c36"/>
+  <polygon points="0 0, 8 3, 0 6" fill="#009fe3"/>
 </marker>
 <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-  <polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/>
+  <polygon points="0 0, 8 3, 0 6" fill="#1a808c"/>
 </marker>
 ```
 
 | Arrow | Stroke | When |
 |---|---|---|
-| Default | muted `#4f5d75` | Internal, generic |
-| Accent | coral `#eb6c36` | Primary / highlighted / headline |
-| Link-blue | `#2e5aa8` | HTTP/API calls, external systems |
+| Default | muted `#4a6272` | Internal, generic |
+| Accent | coral `#009fe3` | Primary / highlighted / headline |
+| Link-blue | `#1a808c` | HTTP/API calls, external systems |
 | Dashed | `stroke-dasharray="5,4"` + any color | Optional, passive, return, async |
 
 **Draw arrows before boxes** so z-order puts lines behind nodes.
@@ -300,7 +300,7 @@ These six rules are **non-negotiable**. Run the pre-output checklist (§9) to ve
 
 ```svg
 <!-- 1. Opaque paper mask — prevents arrows bleeding through transparent fills -->
-<rect x="X" y="Y" width="W" height="H" rx="6" fill="#f5f5f5"/>
+<rect x="X" y="Y" width="W" height="H" rx="6" fill="#f7f9fa"/>
 <!-- 2. Styled box -->
 <rect x="X" y="Y" width="W" height="H" rx="6" fill="FILL" stroke="STROKE" stroke-width="1"/>
 <!-- 3. Rectangular type tag (rx=2, NOT a pill) -->
@@ -308,10 +308,10 @@ These six rules are **non-negotiable**. Run the pre-output checklist (§9) to ve
 <text x="X+22" y="Y+15" fill="STROKE@0.8" font-size="7" font-family="'Roboto Mono', monospace"
       text-anchor="middle" letter-spacing="0.08em">API</text>
 <!-- 4. Node name (Arial — human-readable) -->
-<text x="CX" y="CY+2" fill="#2d3142" font-size="12" font-weight="600"
+<text x="CX" y="CY+2" fill="#1d3849" font-size="12" font-weight="600"
       font-family="'Arial', 'Arimo', sans-serif" text-anchor="middle">Node Name</text>
 <!-- 5. Technical sublabel (Roboto Mono) -->
-<text x="CX" y="CY+18" fill="#4f5d75" font-size="9"
+<text x="CX" y="CY+18" fill="#4a6272" font-size="9"
       font-family="'Roboto Mono', monospace" text-anchor="middle">tech:port</text>
 ```
 
@@ -321,8 +321,8 @@ Every arrow label needs an opaque rect behind it. Without one it bleeds through 
 
 ```svg
 <!-- Mask sits 14px above the arrow (8px text height + 6px gap). Stroke is at ARROW_Y. -->
-<rect x="MID_X-18" y="ARROW_Y-20" width="36" height="12" rx="2" fill="#f5f5f5"/>
-<text x="MID_X" y="ARROW_Y-11" fill="#7a8399" font-size="8"
+<rect x="MID_X-18" y="ARROW_Y-20" width="36" height="12" rx="2" fill="#f7f9fa"/>
+<text x="MID_X" y="ARROW_Y-11" fill="#7a8e9b" font-size="8"
       font-family="'Roboto Mono', monospace" text-anchor="middle" letter-spacing="0.06em">WRITE</text>
 ```
 
@@ -339,8 +339,8 @@ Rules:
 
 ```svg
 <line x1="30" y1="LEGEND_Y-8" x2="VIEWBOX_W-30" y2="LEGEND_Y-8"
-      stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
-<text x="30" y="LEGEND_Y+8" fill="#4f5d75" font-size="8" font-family="'Roboto Mono', monospace"
+      stroke="rgba(29,56,73,0.10)" stroke-width="0.8"/>
+<text x="30" y="LEGEND_Y+8" fill="#4a6272" font-size="8" font-family="'Roboto Mono', monospace"
       letter-spacing="0.14em">LEGEND</text>
 <!-- Items — horizontal row, ~160px apart -->
 ```
@@ -437,7 +437,7 @@ Don't use 3 identical generic cards. Vary the treatment:
 Rules:
 
 - `background: #ffffff` (not paper — slight lift without shadow)
-- `border: 1px solid rgba(45,49,66,0.12)`
+- `border: 1px solid rgba(29,56,73,0.12)`
 - `border-radius: 6px`, `padding: 1.25rem`
 - **No `box-shadow`**
 - Card dots: 7px, `border-radius: 50%` — ink / muted / coral / link / soft variants
@@ -483,7 +483,7 @@ Run before producing any diagram.
 - [ ] **When several connectors enter or exit the same edge of a box, each has its own attach point (≥12px apart)? No connector hides another?**
 - [ ] **No connector passes behind a non-endpoint box, except the unavoidable-intervening-box case (§6 rule 5) — and in that case, the stroke is dashed and the label sits at the visible end?**
 - [ ] **No label mask overlaps a node drawn after it? (Node fill would clip the text — §6 rule 6. From a repository checkout, run `python3 <repo-root>/scripts/verify-geometry.py <file>`.)**
-- [ ] Every arrow label has an opaque `fill="#f5f5f5"` rect behind it?
+- [ ] Every arrow label has an opaque `fill="#f7f9fa"` rect behind it?
 - [ ] Legend is a horizontal bottom strip, not floating?
 - [ ] No vertical `writing-mode` text?
 - [ ] `viewBox` expanded for the legend strip (~60px)?

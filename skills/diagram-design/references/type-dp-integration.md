@@ -57,7 +57,7 @@ internal_connections:               # explicit platform-component edges
   - { from: "JupyterLab",  to: "Trino",      style: "secondary", dashed: true }
   - { from: "Airflow",     to: ["Apache NiFi", "MinIO", "JupyterLab"], style: "trigger" }
 
-focal_accent: "#eb6c36"             # one color for all focal components (default = SKILL accent)
+focal_accent: "#009fe3"             # one color for all focal components (default = SKILL accent)
 dark: false
 ```
 
@@ -177,7 +177,7 @@ bar_w      = zone_w - 2*zone_pad_x       # 664
 bar_cx     = zone_cx                     # 608
 ```
 
-Bars span the full zone width minus 16-px padding on each side. Bars marked `focal: true` use `bar_h_focal=56` and accent styling (fill `rgba(focal_accent, 0.08)`, stroke `focal_accent`). Non-focal bars use `bar_h_default=44` with muted styling (fill `rgba(45,49,66,0.05)`, stroke `rgba(45,49,66,0.32)`).
+Bars span the full zone width minus 16-px padding on each side. Bars marked `focal: true` use `bar_h_focal=56` and accent styling (fill `rgba(focal_accent, 0.08)`, stroke `focal_accent`). Non-focal bars use `bar_h_default=44` with muted styling (fill `rgba(29,56,73,0.05)`, stroke `rgba(29,56,73,0.32)`).
 
 ### 2.4 Source / consumer placement (side columns)
 
@@ -188,7 +188,7 @@ consumer_y(k)     = source_y(k)                 # mirrored
 consumer_cy(k)    = source_cy(k)
 ```
 
-All side-column nodes use fixed `w=160 h=64`. Same fill / stroke pattern: fill `rgba(79,93,117,0.06)`, stroke `#7a8399`, stroke-width 1.
+All side-column nodes use fixed `w=160 h=64`. Same fill / stroke pattern: fill `rgba(79,93,117,0.06)`, stroke `#7a8e9b`, stroke-width 1.
 
 ---
 
@@ -198,21 +198,21 @@ Five styles, bound to topology. Don't let user override style on focal-touching,
 
 | `style` | Stroke | Width | Dash | Marker | When required |
 |---|---|---|---|---|---|
-| `primary` | `#eb6c36` (focal_accent) | 1.4 | — | `arrow-accent` | Every edge whose endpoint is a `focal: true` component. Also every Trino → consumer edge (serve-flow rule). |
-| `secondary` | `#4f5d75` (muted) | 1.2 | — | `arrow` | Default for internal platform-component edges and source → platform edges that don't touch focal. |
-| `federated` | `#2e5aa8` (link-blue) | 1.0 | `4,3` | `arrow-link` | Federation queries (e.g., source DB → Trino). |
-| `trigger` | `#4f5d75` (muted) | 1.0 | `4,3` | `arrow` | Every edge originating from a `kind: bar` component (Airflow drops). Unlabelled. |
-| `auth` | `#eb6c36` | 1.2 | `5,4` | `arrow-accent` | Every edge from a footer node up to the zone bottom edge. **Never to a specific component.** |
+| `primary` | `#009fe3` (focal_accent) | 1.4 | — | `arrow-accent` | Every edge whose endpoint is a `focal: true` component. Also every Trino → consumer edge (serve-flow rule). |
+| `secondary` | `#4a6272` (muted) | 1.2 | — | `arrow` | Default for internal platform-component edges and source → platform edges that don't touch focal. |
+| `federated` | `#1a808c` (link-blue) | 1.0 | `4,3` | `arrow-link` | Federation queries (e.g., source DB → Trino). |
+| `trigger` | `#4a6272` (muted) | 1.0 | `4,3` | `arrow` | Every edge originating from a `kind: bar` component (Airflow drops). Unlabelled. |
+| `auth` | `#009fe3` | 1.2 | `5,4` | `arrow-accent` | Every edge from a footer node up to the zone bottom edge. **Never to a specific component.** |
 
 **Defs block** (required, five markers — exactly):
 
 ```svg
 <defs>
-  <marker id="arrow"        markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
-  <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#eb6c36"/></marker>
-  <marker id="arrow-link"   markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
-  <marker id="arrow-sm"     markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto"><polygon points="0 0, 6 2.5, 0 5" fill="#4f5d75"/></marker>
-  <marker id="arrow-dim"    markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(45,49,66,0.45)"/></marker>
+  <marker id="arrow"        markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6272"/></marker>
+  <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#009fe3"/></marker>
+  <marker id="arrow-link"   markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1a808c"/></marker>
+  <marker id="arrow-sm"     markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto"><polygon points="0 0, 6 2.5, 0 5" fill="#4a6272"/></marker>
+  <marker id="arrow-dim"    markerWidth="8" markerHeight="6" refX="7" refY="3"   orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(29,56,73,0.45)"/></marker>
 </defs>
 ```
 
@@ -307,18 +307,18 @@ Any source, consumer, platform component (node or bar), or footer node accepts a
 
 | Token | Light | Dark |
 |---|---|---|
-| Page paper | `#f5f5f5` | `#2d3142` |
-| Ink | `#2d3142` | `#f5f5f5` |
-| Muted | `#4f5d75` | `#bfc0c0` |
-| Accent | `#eb6c36` | `#f08a59` |
-| Link (federated) | `#2e5aa8` | `#6a95d8` |
-| Side-column fill | `rgba(79,93,117,0.06)` | `rgba(245,245,245,0.06)` |
-| Side-column stroke | `#7a8399` | `rgba(245,245,245,0.30)` |
-| Zone fill | `rgba(45,49,66,0.025)` | `rgba(245,245,245,0.04)` |
-| Zone stroke | `rgba(45,49,66,0.32)` | `rgba(245,245,245,0.30)` |
-| Non-focal bar fill | `rgba(45,49,66,0.05)` | `rgba(245,245,245,0.06)` |
-| Focal fill | `rgba(235,108,54,0.08)` | `rgba(240,138,89,0.12)` |
-| Focal stroke | `#eb6c36` | `#f08a59` |
+| Page paper | `#f7f9fa` | `#1d3849` |
+| Ink | `#1d3849` | `#f7f9fa` |
+| Muted | `#4a6272` | `#b7c4ce` |
+| Accent | `#009fe3` | `#33b5ec` |
+| Link (federated) | `#1a808c` | `#4fb3be` |
+| Side-column fill | `rgba(79,93,117,0.06)` | `rgba(247,249,250,0.06)` |
+| Side-column stroke | `#7a8e9b` | `rgba(247,249,250,0.30)` |
+| Zone fill | `rgba(29,56,73,0.025)` | `rgba(247,249,250,0.04)` |
+| Zone stroke | `rgba(29,56,73,0.32)` | `rgba(247,249,250,0.30)` |
+| Non-focal bar fill | `rgba(29,56,73,0.05)` | `rgba(247,249,250,0.06)` |
+| Focal fill | `rgba(0,159,227,0.08)` | `rgba(51,181,236,0.12)` |
+| Focal stroke | `#009fe3` | `#33b5ec` |
 | Custom component colors | `C` | `C_light` (lighten ~15%) |
 
 ---
