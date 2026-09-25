@@ -35,7 +35,7 @@ Dark mode: stroke `#bfc0c0` (muted on dark paper). Do not fill the open marker �
 
 ## Combined fragments (`alt` / `opt` / `loop`)
 
-Use a rectangular **frame** that spans only the lifelines participating in the branch. Operator label is Geist Mono, uppercase, in a small tab at the top-left of the frame. Time still flows top→down inside the frame.
+Use a rectangular **frame** that spans only the lifelines participating in the branch. Operator label is Roboto Mono, uppercase, in a small tab at the top-left of the frame. Time still flows top→down inside the frame.
 
 ### Frame primitive (shared)
 
@@ -47,7 +47,7 @@ Use a rectangular **frame** that spans only the lifelines participating in the b
 <rect x="X" y="Y" width="40" height="16" rx="2"
       fill="#f5f5f5" stroke="rgba(45,49,66,0.22)" stroke-width="1"/>
 <text x="X+20" y="Y+12" fill="#4f5d75" font-size="8"
-      font-family="'Geist Mono', monospace" text-anchor="middle"
+      font-family="'Roboto Mono', monospace" text-anchor="middle"
       letter-spacing="0.12em">ALT</text>
 ```
 
@@ -57,7 +57,7 @@ Dark mode: frame fill `rgba(245,245,245,0.04)`, stroke `rgba(245,245,245,0.22)`,
 
 | Operator | Regions | Divider | Guard label |
 |---|---|---|---|
-| `opt` | 1 | none | `[if condition]` under the tab (Geist Mono 8px) |
+| `opt` | 1 | none | `[if condition]` under the tab (Roboto Mono 8px) |
 | `alt` | **2 max** | dashed horizontal hairline across the frame | `[guard]` on region 1; `[else]` (or a second guard) on region 2 |
 | `loop` | 1 | none | `[for each item]` or `[retry ≤ 3]` under the tab |
 
@@ -66,7 +66,7 @@ Dark mode: frame fill `rgba(245,245,245,0.04)`, stroke `rgba(245,245,245,0.22)`,
 ```svg
 <!-- Guard: left-aligned inside the frame, mono -->
 <text x="X+12" y="GUARD_Y" fill="#4f5d75" font-size="8"
-      font-family="'Geist Mono', monospace" letter-spacing="0.04em">[token valid]</text>
+      font-family="'Roboto Mono', monospace" letter-spacing="0.04em">[token valid]</text>
 
 <!-- alt region divider -->
 <line x1="X+8" y1="DIV_Y" x2="X+W-8" y2="DIV_Y"
@@ -115,7 +115,7 @@ If you exceed, split: overview (happy path) + detail (failure / refresh path).
 - Swimlane-style lanes instead of lifelines (different grammar).
 - Drawing `if/else` as two free-floating arrow clusters with **no** fragment frame.
 - Nested `alt` inside `alt` (split into two diagrams).
-- Fragment operator label in Geist sans — must be mono: `ALT` / `OPT` / `LOOP`.
+- Fragment operator label in Arial — must be mono: `ALT` / `OPT` / `LOOP`.
 - Coral on both `alt` branches.
 - Frame that covers actors with no messages inside the fragment.
 - Filled arrowhead on async fire-and-forget (use open marker).

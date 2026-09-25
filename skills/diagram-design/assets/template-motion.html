@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Motion diagram template</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     :root {
@@ -14,9 +14,9 @@
       --color-soft: #7a8399;
       --color-accent: #eb6c36;
       --color-rule: rgba(45,49,66,0.12);
-      --font-sans: 'Geist', system-ui, sans-serif;
-      --font-serif: 'Instrument Serif', 'Noto Serif', 'Noto Serif KR', serif;
-      --font-mono: 'Geist Mono', ui-monospace, monospace;
+      --font-sans: 'Arial', 'Arimo', system-ui, sans-serif;
+      --font-serif: 'Arial', 'Arimo', 'Noto Serif', 'Noto Serif KR', serif;
+      --font-mono: 'Roboto Mono', ui-monospace, monospace;
       --motion-fast: 160ms;
       --motion-step: 480ms;
       --motion-hold: 720ms;
@@ -193,27 +193,27 @@
 
       <g data-motion-item data-step="1" aria-label="Step 1: Request received">
         <rect x="48" y="128" width="200" height="104" rx="8" fill="#f5f5f5" stroke="#2d3142"/>
-        <text x="148" y="172" text-anchor="middle" fill="#2d3142" font-family="Geist, sans-serif" font-size="16" font-weight="600">Request</text>
-        <text x="148" y="196" text-anchor="middle" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="12">fields complete</text>
+        <text x="148" y="172" text-anchor="middle" fill="#2d3142" font-family="Arial, Arimo, sans-serif" font-size="16" font-weight="600">Request</text>
+        <text x="148" y="196" text-anchor="middle" fill="#4f5d75" font-family="Roboto Mono, monospace" font-size="12">fields complete</text>
       </g>
       <g data-motion-item data-step="2" aria-label="Step 2: Policy passed">
         <rect x="356" y="128" width="200" height="104" rx="8" fill="rgba(235,108,54,0.08)" stroke="#eb6c36"/>
-        <text x="456" y="168" text-anchor="middle" fill="#2d3142" font-family="Geist, sans-serif" font-size="16" font-weight="600">Policy</text>
-        <text x="456" y="196" text-anchor="middle" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="12">✓ PASS · rule 2</text>
+        <text x="456" y="168" text-anchor="middle" fill="#2d3142" font-family="Arial, Arimo, sans-serif" font-size="16" font-weight="600">Policy</text>
+        <text x="456" y="196" text-anchor="middle" fill="#4f5d75" font-family="Roboto Mono, monospace" font-size="12">✓ PASS · rule 2</text>
       </g>
       <g data-motion-item data-step="3" aria-label="Step 3: Three items queued">
         <rect x="664" y="128" width="200" height="104" rx="8" fill="#f5f5f5" stroke="#2d3142"/>
-        <text x="764" y="164" text-anchor="middle" fill="#2d3142" font-family="Geist, sans-serif" font-size="16" font-weight="600">Queue</text>
+        <text x="764" y="164" text-anchor="middle" fill="#2d3142" font-family="Arial, Arimo, sans-serif" font-size="16" font-weight="600">Queue</text>
         <rect x="700" y="184" width="16" height="16" fill="#4f5d75"/><rect x="724" y="184" width="16" height="16" fill="#4f5d75"/><rect x="748" y="184" width="16" height="16" fill="#4f5d75"/>
-        <text x="796" y="196" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="12">3 queued</text>
+        <text x="796" y="196" fill="#4f5d75" font-family="Roboto Mono, monospace" font-size="12">3 queued</text>
       </g>
       <g data-motion-item data-step="4" aria-label="Step 4: Audit entry appended">
         <rect x="664" y="328" width="200" height="88" rx="8" fill="#f5f5f5" stroke="#2d3142"/>
-        <text x="764" y="364" text-anchor="middle" fill="#2d3142" font-family="Geist, sans-serif" font-size="16" font-weight="600">Audit log</text>
-        <text x="764" y="388" text-anchor="middle" fill="#4f5d75" font-family="Geist Mono, monospace" font-size="12">0042 · appended</text>
+        <text x="764" y="364" text-anchor="middle" fill="#2d3142" font-family="Arial, Arimo, sans-serif" font-size="16" font-weight="600">Audit log</text>
+        <text x="764" y="388" text-anchor="middle" fill="#4f5d75" font-family="Roboto Mono, monospace" font-size="12">0042 · appended</text>
       </g>
       <g data-motion-item data-step="5" aria-label="Step 5: Evaluation complete">
-        <text x="48" y="376" fill="#2d3142" font-family="Geist, sans-serif" font-size="16" font-weight="600">Outcome: accepted and recorded</text>
+        <text x="48" y="376" fill="#2d3142" font-family="Arial, Arimo, sans-serif" font-size="16" font-weight="600">Outcome: accepted and recorded</text>
       </g>
 
       <!-- Decorative duplicate path and token never carry unique meaning. -->

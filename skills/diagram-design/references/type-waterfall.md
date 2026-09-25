@@ -21,9 +21,9 @@
 - **Sign is encoded by fill weight, not hue.** Increases take the bar family's default tint (`rgba(79,93,117,0.15)` fill, `muted` stroke). Decreases are hollow — paper fill, same `muted` stroke — so the two directions survive greyscale and colour-vision deficiency without leaning on the accent. The geometry (which end of the bar meets the carry) and the signed printed value are the second and third encodings of the same fact.
 - **Totals are the heaviest marks:** `rgba(45,49,66,0.08)` fill with a 1px `ink` stroke. The reader's eye should land on the two anchors first, then walk the bridges.
 - **Focal bridge (≤1, optional):** the one contribution the chart exists to show gets the bar family's focal treatment — `rgba(235,108,54,0.12)` fill, `accent` stroke, accent value label. It replaces that bar's sign fill; the signed label and geometry still carry the direction.
-- **Value labels:** Geist Mono 8px. Totals and increases print above the bar top (baseline `top − 8`); decreases print below the bar bottom (baseline `bottom + 12`), because the space above a decrease is where its carry arrives. Deltas print with an explicit sign (`+64`, `−38`); totals print unsigned.
-- **Gridlines / axes:** identical to the bar chart — 4–6 faint horizontal gridlines `rgba(45,49,66,0.08)` 0.8px, y-axis line and x-axis baseline `rgba(45,49,66,0.25)` 1px, tick labels Geist Mono 8px muted right-aligned at x=72, rotated y-axis title Geist Mono 7px tracked.
-- **Category labels:** centered under each bar at y=440, Geist 11px 600 ink; the focal bar's label may take accent.
+- **Value labels:** Roboto Mono 8px. Totals and increases print above the bar top (baseline `top − 8`); decreases print below the bar bottom (baseline `bottom + 12`), because the space above a decrease is where its carry arrives. Deltas print with an explicit sign (`+64`, `−38`); totals print unsigned.
+- **Gridlines / axes:** identical to the bar chart — 4–6 faint horizontal gridlines `rgba(45,49,66,0.08)` 0.8px, y-axis line and x-axis baseline `rgba(45,49,66,0.25)` 1px, tick labels Roboto Mono 8px muted right-aligned at x=72, rotated y-axis title Roboto Mono 7px tracked.
+- **Category labels:** centered under each bar at y=440, Arial 11px 600 ink; the focal bar's label may take accent.
 - **Legend:** horizontal bottom strip after a hairline rule, one key per treatment used: total, increase, decrease, focal.
 
 ### Waterfall element pattern
@@ -33,7 +33,7 @@
 <rect x="112" y="192" width="96" height="228" fill="#f5f5f5"/>
 <rect x="112" y="192" width="96" height="228" fill="rgba(45,49,66,0.08)" stroke="#2d3142" stroke-width="1"
       data-role="total" data-value="240" data-name="FY25 base"/>
-<text x="160" y="184" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">240</text>
+<text x="160" y="184" fill="#4f5d75" font-size="8" font-family="'Roboto Mono', monospace" text-anchor="middle">240</text>
 
 <!-- Carry: the running total (240) crosses the gap at its own level -->
 <line x1="208" y1="192" x2="256" y2="192" stroke="rgba(45,49,66,0.55)" stroke-width="1" data-carry="240"/>
@@ -42,7 +42,7 @@
 <rect x="256" y="131" width="96" height="61" fill="#f5f5f5"/>
 <rect x="256" y="131" width="96" height="61" fill="rgba(79,93,117,0.15)" stroke="#4f5d75" stroke-width="1"
       data-role="delta" data-value="+64" data-name="Headcount"/>
-<text x="304" y="123" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">+64</text>
+<text x="304" y="123" fill="#4f5d75" font-size="8" font-family="'Roboto Mono', monospace" text-anchor="middle">+64</text>
 ```
 
 Endpoint positions round to the nearest integer pixel and never snap to the 4px grid — data coordinates are exempt, exactly as in the dumbbell. Bar x-positions and widths are layout, so they stay on the grid.

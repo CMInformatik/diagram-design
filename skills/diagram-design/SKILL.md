@@ -28,6 +28,8 @@ Open [`references/style-guide.md`](references/style-guide.md) and check the defa
 
 Then branch per the matching section of [`references/onboarding.md`](references/onboarding.md); for **(f)** follow [`references/profiles.md`](references/profiles.md).
 
+**CMI fork:** the shipped `references/style-guide.md` is the CMI skin (CMI Brandbook colours, Arial/Arimo + Roboto Mono). Treat it as the chosen skin: skip the gate, do not offer to save it as a profile, and take every font family from the style guide, never from upstream names in older snippets.
+
 **Once the style guide has been customized** (or the user explicitly chose default), skip this gate on later runs. A leading profile header names the copied-in active profile. Without a header, any semantic-role value or typography family differing from shipped defaults means **custom-unsaved**: skip the gate and offer to save it as a profile. All-default tokens with no marker/header trigger the gate. After onboarding, offer to save as a named client profile per `references/profiles.md`.
 
 ---
@@ -147,7 +149,7 @@ These mark "AI slop" schematics of any type:
 | Anti-pattern | Why it fails |
 |---|---|
 | Dark mode + cyan/purple glow | Looks "technical" without design decisions |
-| JetBrains Mono as blanket "dev" font | Mono is for *technical* content — ports, commands, URLs. Names go in Geist sans. |
+| JetBrains Mono as blanket "dev" font | Mono is for *technical* content — ports, commands, URLs. Names go in Arial. |
 | Identical boxes for every node | Erases hierarchy |
 | Legend floating inside the diagram area | Collides with nodes |
 | Arrow labels with no masking rect | Bleeds through the line |
@@ -196,19 +198,19 @@ Type-specific anti-patterns live in each type reference linked in the guide.
 
 ### Typography (summary — full spec in style-guide.md)
 
-- **Title** — Instrument Serif, 1.75rem, 400 — H1 only
-- **Node name** — Geist (sans), 12px, 600 — human-readable labels
-- **Sublabel** — Geist Mono, 9px — ports, URLs, field types
-- **Eyebrow / tag** — Geist Mono, 7–8px, uppercase, tracked — type tags, axis labels
-- **Arrow label** — Geist Mono, 8px — annotation on arrows
-- **Editorial aside** — Instrument Serif *italic*, 14px — callouts only
+- **Title** — Arial, 1.75rem, 700 — H1 only
+- **Node name** — Arial, 12px, 600 — human-readable labels
+- **Sublabel** — Roboto Mono, 9px — ports, URLs, field types
+- **Eyebrow / tag** — Roboto Mono, 7–8px, uppercase, tracked — type tags, axis labels
+- **Arrow label** — Roboto Mono, 8px — annotation on arrows
+- **Editorial aside** — Arial *italic*, 14px — callouts only
 
 **Non-Latin labels** — extend the family: [Korean](references/style-guide.md#korean-labels), [Chinese](references/style-guide.md#traditional-chinese-labels), [Cyrillic](references/style-guide.md#cyrillic-labels).
 
 **Mono is for technical content only** — never as a blanket "dev" font, and never JetBrains Mono.
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
 ```
 
 ---
@@ -303,14 +305,14 @@ These six rules are **non-negotiable**. Run the pre-output checklist (§9) to ve
 <rect x="X" y="Y" width="W" height="H" rx="6" fill="FILL" stroke="STROKE" stroke-width="1"/>
 <!-- 3. Rectangular type tag (rx=2, NOT a pill) -->
 <rect x="X+8" y="Y+6" width="28" height="12" rx="2" fill="transparent" stroke="STROKE@0.40" stroke-width="0.8"/>
-<text x="X+22" y="Y+15" fill="STROKE@0.8" font-size="7" font-family="'Geist Mono', monospace"
+<text x="X+22" y="Y+15" fill="STROKE@0.8" font-size="7" font-family="'Roboto Mono', monospace"
       text-anchor="middle" letter-spacing="0.08em">API</text>
-<!-- 4. Node name (Geist sans — human-readable) -->
+<!-- 4. Node name (Arial — human-readable) -->
 <text x="CX" y="CY+2" fill="#2d3142" font-size="12" font-weight="600"
-      font-family="'Geist', sans-serif" text-anchor="middle">Node Name</text>
-<!-- 5. Technical sublabel (Geist Mono) -->
+      font-family="'Arial', 'Arimo', sans-serif" text-anchor="middle">Node Name</text>
+<!-- 5. Technical sublabel (Roboto Mono) -->
 <text x="CX" y="CY+18" fill="#4f5d75" font-size="9"
-      font-family="'Geist Mono', monospace" text-anchor="middle">tech:port</text>
+      font-family="'Roboto Mono', monospace" text-anchor="middle">tech:port</text>
 ```
 
 ### Arrow labels — always mask, always with margin
@@ -321,7 +323,7 @@ Every arrow label needs an opaque rect behind it. Without one it bleeds through 
 <!-- Mask sits 14px above the arrow (8px text height + 6px gap). Stroke is at ARROW_Y. -->
 <rect x="MID_X-18" y="ARROW_Y-20" width="36" height="12" rx="2" fill="#f5f5f5"/>
 <text x="MID_X" y="ARROW_Y-11" fill="#7a8399" font-size="8"
-      font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">WRITE</text>
+      font-family="'Roboto Mono', monospace" text-anchor="middle" letter-spacing="0.06em">WRITE</text>
 ```
 
 Rules:
@@ -338,7 +340,7 @@ Rules:
 ```svg
 <line x1="30" y1="LEGEND_Y-8" x2="VIEWBOX_W-30" y2="LEGEND_Y-8"
       stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
-<text x="30" y="LEGEND_Y+8" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace"
+<text x="30" y="LEGEND_Y+8" fill="#4f5d75" font-size="8" font-family="'Roboto Mono', monospace"
       letter-spacing="0.14em">LEGEND</text>
 <!-- Items — horizontal row, ~160px apart -->
 ```
@@ -410,10 +412,10 @@ If you exceed, split into two diagrams (overview + detail).
 
 ### Page layout
 
-1. **Header** — eyebrow (Geist Mono), title (Instrument Serif), optional subtitle (Geist muted).
+1. **Header** — eyebrow (Roboto Mono), title (Arial), optional subtitle (Arial muted).
 2. **Diagram container** — default: **clean, borderless**, no background — the SVG sits directly on the page paper. Optional *framed* variant (for card-heavy layouts or hero placements): `paper-2` bg + 1px `rule` border + 8px radius + `1.5rem` padding + `overflow-x: auto`.
 3. **Summary cards** — 2–3 col grid with *varied* widths (e.g., `1.1fr 1fr 0.9fr`).
-4. **Footer** — colophon in Geist Mono, muted, hairline top border.
+4. **Footer** — colophon in Roboto Mono, muted, hairline top border.
 
 ---
 
@@ -492,10 +494,10 @@ Run before producing any diagram.
 **Typography:**
 
 - [ ] Brand match uses exact public families/weights, verified via `getComputedStyle`; fallbacks disclosed?
-- [ ] Human-readable names in Geist sans, not Geist Mono?
-- [ ] Technical sublabels (ports, commands, URLs) in Geist Mono?
-- [ ] Page title in Instrument Serif?
-- [ ] Annotation callouts (if any) in *italic* Instrument Serif? (see [primitive-annotation.md](references/primitive-annotation.md))
+- [ ] Human-readable names in Arial, not Roboto Mono?
+- [ ] Technical sublabels (ports, commands, URLs) in Roboto Mono?
+- [ ] Page title in Arial?
+- [ ] Annotation callouts (if any) in *italic* Arial? (see [primitive-annotation.md](references/primitive-annotation.md))
 - [ ] No JetBrains Mono anywhere?
 
 ---

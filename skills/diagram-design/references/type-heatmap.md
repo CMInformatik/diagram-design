@@ -8,8 +8,8 @@
 - **Cell size:** 116px wide × 56px tall, gap 4px. Maximum grid: 6 columns × 5 rows within the viewBox; smaller grids scale the cells up to fill the space.
 - **Row count:** 3–7. Fewer → a table says it with less ink; more → the cells shrink below readability at the minimum viewBox width.
 - **Column count:** 3–8. Same constraint: 8 × 116 = 928px exceeds the available 800px at this viewBox, so either reduce columns or reduce cell width proportionally (minimum cell width 80px).
-- **Axes:** row labels right-aligned in the left gutter (Geist Mono 9px, `text-anchor="end"`, x=148); column labels centered above each column (Geist Mono 9px, `text-anchor="middle"`); axis titles in Geist Mono 7px small-caps rotated/positioned in the margins.
-- **Value text (optional):** Geist Mono 8px centered inside each cell. Flip text color to paper when fill opacity ≥ 0.40 (the ink ramp becomes dark enough to carry white); keep ink text below that threshold.
+- **Axes:** row labels right-aligned in the left gutter (Roboto Mono 9px, `text-anchor="end"`, x=148); column labels centered above each column (Roboto Mono 9px, `text-anchor="middle"`); axis titles in Roboto Mono 7px small-caps rotated/positioned in the margins.
+- **Value text (optional):** Roboto Mono 8px centered inside each cell. Flip text color to paper when fill opacity ≥ 0.40 (the ink ramp becomes dark enough to carry white); keep ink text below that threshold.
 
 ### Cell pattern
 
